@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Nightmare Client</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Minecraft: Bedrock Edition utility mod available.">
+    <meta name="keywords" content="Nightmareclient, nightmareclient.download, Minecraft hack clients, Minecraft bedrock hacks, nightmare">
+    <meta name="author" content="Midnight">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:type" content="site">
+    <meta property="og:title" content="Nightmareclient">
+    <meta property="og:description" content="Minecraft: Bedrock Edition utility mod available.">
+    <meta property="og:url" content="https://nightmareclient.download">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:image:type" content="image/png" />
+    <meta itemprop="name" content="nightmareclient.download">
+    <meta itemprop="description" content="Minecraft: Bedrock Edition utility mod available.">
+    <meta itemprop="image" content="img/logo.png">
+    <meta name="theme-color" content="#2b7bfc">
+    <meta name=”viewport” content=”width=device-width, initial-scale="1″>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+  <script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+  </script>
+  <div id="pattern"></div><!--Pattern to add some touch -->
+  <div class="Header">
+  <img id="Noth1"src="img/header.png" width="330" height="100">
+  </div>
+  	<div class="typethewriter">
+	<h3 style="font-family: Inconsolata;">
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "Nightmare Client","One of the best minecraft hack clients!","Download now!." ]'></span>
+</h3>
+	</div>
+  <div class="Menu">
+      <ul>
+	<li><i class="fa fa-fw fa-home"></i><a href="index.html">Home</a></li>
+	<li><i class="fa fa-fw fa-tags"></i><a href="Updates.html">Updates</a></li>
+	<li><i class="fa fa-fw fa-comments-o"></i><a href="faq.html">FAQ</a></li>
+</ul></div>
+<br>
+	<center>
+	<h2>Updates / Changelog</h2>
+	</center>
+	<div class="Update">
+		<div class="UpdateText"><h4><span style="color: #28de30">Latest</span> Update (11/12/2019) <br>Release (v2.2.0)</h4></div>
+		<p id="UpdateLog">
+		[<span style="color: #28de30">+</span>] Support for 1.13<br>
+[<span style="color: #28de30">+</span>] Spammer (Constantly spam messages in chat)<br>
+[<span style="color: #28de30">+</span>] Antibot (Detect bots and not attack them with Killaura)<br>
+[<span style="color: #28de30">+</span>] InventoryCleaner (Throw stuff out of your inventory)<br>
+[<span style="color: #28de30">+</span>] ClickTP (Teleport, finally)<br>
+[<span style="color: #28de30">+</span>] ChestAura (Open chests around you)<br>
+		</p>
+	</div>
+	<br>
+		<div class="Update">
+		<div class="UpdateText"><h4>11/4/2019<br>Release (v2.1.0-info)</h4></div>
+		<p id="UpdateLog">
+		[<span style="color: #83bb87">/</span>] This release just display some small text about 1.13 not being compatible yet.<br>
+		[<span style="color: #83bb87">/</span>] ![image](https://user-images.githubusercontent.com/28305462/68146946-53766e80-ff39-11e9-8a48-2e5de1665908.png)
+		</p>
+	</div>
+	<h6>Copyright © Nightmare</h6>
+  </body>
+  	
+	<style>
+	#UpdateLog {
+	color: white;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-family: Arial;
+	padding-left: 10px;
+	text-shadow: 0px 0px 2px white;
+	}
+	h2 {
+	font-family: AG;
+	font-size: 20px;
+	color: white;
+	text-shadow: 0px 0px 3px white;
+	padding-bottom: 7px;
+	}
+	.UpdateText {
+	text-shadow: 0px 3px 10px black;
+	text-align: left;
+	margin-top: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: #6ea6ea9e;
+	}
+	.Update {
+	box-shadow: 0px 1px 4px black;
+	border-radius: 10px;
+	padding-bottom: 6px;
+	background-color:#000000ab;
+	  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 80%;
+  height: 60%;
+	}
+		.Update:hover {
+	box-shadow: 0px 1px 10px black;
+	border-radius: 10px;
+	padding-bottom: 6px;
+	background-color:#00000082;
+	margin-top: 4px;
+	margin-bottom: 3px;
+	}
+	</style>
+</html>
